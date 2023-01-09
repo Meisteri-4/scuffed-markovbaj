@@ -53,7 +53,10 @@ def main():
     while True:
         sentence = markov.make_sentence(300)
         resp = re.get(url + sentence, stream=True)
-        sound_file = io.BytesIO(resp.content)
+        try:
+            sound_file = io.BytesIO(resp.content)
+        except Exception:
+            continue
         pygame.mixer.Sound(sound_file).play()
         sleep(randint(freq_start, freq_end))
 
