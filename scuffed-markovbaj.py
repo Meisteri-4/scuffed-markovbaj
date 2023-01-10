@@ -1,5 +1,4 @@
 #!/bin/python
-import pygame.mixer
 from time import sleep
 import markovify
 import json
@@ -8,6 +7,7 @@ from random import randint
 import requests as re
 import io
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+import pygame.mixer
 
 
 class Model:
